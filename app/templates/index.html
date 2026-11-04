@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}JCT{% endblock %}
+{% block content %}
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
+  <a class="btn btn-primary" href="{{ url_for('productos.lista') }}">Productos</a>
+  <a class="btn btn-success" href="{{ url_for('clientes.lista') }}">Clientes</a>
+  <a class="btn btn-warning" href="{{ url_for('pedidos.lista') }}">Pedidos</a>
+</div>
+{% endblock %}
