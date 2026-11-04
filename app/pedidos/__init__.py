@@ -1,1 +1,1 @@
-from .routes import bp_clientes
+from .routes import bp_pedidos
