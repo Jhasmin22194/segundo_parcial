@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+techbol.db
+instance/
+.env
