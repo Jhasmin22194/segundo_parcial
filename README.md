@@ -19,6 +19,6 @@ flask --app run db upgrade
 ## Datos de prueba y ejecución
 ```bash
 python seed.py
-flask --app run run --debug
+python run.py
 ```
 Abrir http://127.0.0.1:5000

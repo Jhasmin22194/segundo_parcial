@@ -1,17 +1,11 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-
 from ..extensions import db
 from ..models import Producto
-
 bp_productos = Blueprint("productos", __name__)
-
-
 @bp_productos.route("/")
 def lista():
     productos = Producto.query.order_by(Producto.id).all()
     return render_template("productos/lista.html", productos=productos)
-
-
 @bp_productos.route("/nuevo", methods=["GET", "POST"])
 def nuevo():
     if request.method == "POST":
@@ -30,7 +24,6 @@ def nuevo():
         return redirect(url_for("productos.lista"))
     return render_template("productos/form.html", producto=None)
 
-
 @bp_productos.route("/<int:id>/editar", methods=["GET", "POST"])
 def editar(id):
     producto = Producto.query.get_or_404(id)
@@ -46,7 +39,6 @@ def editar(id):
         flash("Producto actualizado", "success")
         return redirect(url_for("productos.lista"))
     return render_template("productos/form.html", producto=producto)
-
 
 @bp_productos.route("/<int:id>/eliminar", methods=["POST"])
 def eliminar(id):
